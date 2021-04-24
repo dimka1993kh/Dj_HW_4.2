@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Сравнение телефонов</h1>
+            <table class="table">
+                <br>
+                <tbody>
+                    <tr class='head'>
+                        {% for el in table_head %}
+                            <td>{{el}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% for el in phone %}
+                        {% for i in el %}
+                            <tr>
+                                <td>{{i.phone_id.name}}</td>
+                                <td>{{i.phone_id.price}} р.</td>
+                                <td>{{i.phone_id.OS_version}}</td>
+                                <td>{{i.phone_id.RAM}} ГБ</td>
+                                <td>{{i.phone_id.internal_memory_capacity}} ГБ</td>
+                                <td>{{i.phone_id.ppi}}</td>
+                                <td>{{i.phone_id.processor}}</td>
+                                <td>{{i.phone_id.image_size}}</td>
+                                <td>{{i.phone_id.number_cameras}}</td>
+                                {% if i.optimization  %}
+                                    <td>{{i.optimization}}</td>
+                                {% else %}
+                                    <td>-</td>
+                                {% endif %}
+
+                                {% if i.top_android  %}
+                                    <td>{{i.top_android}}</td>
+                                {% else %}
+                                    <td>-</td>
+                                {% endif %}
+
+                                {% if i.quality_price  %}
+                                    <td>{{i.quality_price}}</td>
+                                {% else %}
+                                    <td>-</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

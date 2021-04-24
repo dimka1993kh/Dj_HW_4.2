@@ -1,0 +1,24 @@
+.header {
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+/* Для вертикального отображения таблицы */
+tbody {
+    display:flex;
+}
+
+tr {
+    display:flex;
+    flex-direction: column;
+    flex-wrap:      wrap;
+}
+
+td {
+    height: 80px;  
+    text-align: center; 
+}
+
+.head {
+    text-align: left;
+    font-weight: bold;
+}
